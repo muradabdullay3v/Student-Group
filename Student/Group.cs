@@ -11,8 +11,6 @@ namespace Student
         public string name { get; set; }
         public int MaxStuCount { get; set; }
         public Student[] Students { get; set; }
-        public Student[] holder;
-        public Student[] holder1;
 
         public Group(string name , int MaxStuCount ,params Student[] Students)
         {
@@ -22,7 +20,7 @@ namespace Student
             if (MaxStuCount<Students.Length)
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("Qrupda olan yerlerden cox student artirilib");
+                Console.WriteLine("Qrupda olan yerlerden cox student verilib");
             }
         }
 
@@ -41,7 +39,6 @@ namespace Student
                 Students1[i] = Students[i];
 
             }
-            holder = Students1;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"{student.name} {student.surname} add olundu : ");
             Console.ForegroundColor = ConsoleColor.White;
@@ -49,12 +46,12 @@ namespace Student
             {
                 Console.WriteLine($"{item.name} {item.surname}  id : {item.id}  Ixtisas : {item.ixtisas}");
             }
-            if (MaxStuCount > Students.Length)
+            if (MaxStuCount > Students1.Length)
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Qrup tam dolmayib!");
             }
-            else if (MaxStuCount == Students.Length)
+            else if (MaxStuCount == Students1.Length)
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Qrup doldu!");
@@ -93,8 +90,6 @@ namespace Student
                 Console.WriteLine($"{Students1[i].name} {Students1[i].surname}   id : {Students1[i].id}   Ixtisas : {Students1[i].ixtisas}");
             }
             Console.WriteLine("\n");
-
-            holder1 = Students1;
         }
     }
 }
